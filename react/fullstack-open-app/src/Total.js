@@ -5,4 +5,3 @@ const Total = ({exercises3,exercises2,exercises1}) => {
 }
 
 export default Total
-{}
