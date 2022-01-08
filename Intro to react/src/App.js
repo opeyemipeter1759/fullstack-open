@@ -1,9 +1,11 @@
 import Contents from "./Contents";
 import Header from "./Header";
 import Total from "./Total";
+import Hello from "./Hello";
 
-function App()
-{
+function App() {
+    const name = "peter";
+    const age = 30;
     const course = {
         name: 'Half Stack application development',
         parts: [
@@ -23,13 +25,13 @@ function App()
     }
     return (
         <div>
-            <Header course={course} />
+            {/* <Header course={course} />
             <Contents part1={course.parts}
              />
             <Total
                 parts={course.parts}
-               />
-       
+               /> */}
+               <Hello  age ={age}  name ={name}/>
         </div>
     );
 }
