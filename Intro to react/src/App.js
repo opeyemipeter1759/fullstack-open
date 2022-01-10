@@ -1,3 +1,4 @@
+import React, {useState} from 'react'
 import Contents from "./Contents";
 import Header from "./Header";
 import Total from "./Total";
@@ -23,6 +24,16 @@ function App() {
             }
         ]
     }
+    const [counter, setCounter] = useState(0);
+
+    // setInterval(
+    //     () => setCounter(counter + 1), 1000
+    // )
+
+    console.log(counter);
+    const handleClick = () => {
+        setCounter(counter + 1 )
+    }
     return (
         <div>
             {/* <Header course={course} />
@@ -31,7 +42,15 @@ function App() {
             <Total
                 parts={course.parts}
                /> */}
-               <Hello  age ={age}  name ={name}/>
+               {/* <Hello  age ={age}  name ={name}/> */}
+
+               {counter}
+
+               <button onClick={handleClick}> plus </button>
+               <button onClick={()=>
+                   setCounter(0)
+               }> plus </button>
+
         </div>
     );
 }

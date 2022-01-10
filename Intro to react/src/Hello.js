@@ -2,10 +2,8 @@ import React from 'react'
 
 const Hello = (props) => {
     const {age, name } = props
-    const BornYear = () =>{
-        const YearNow = new Date().getFullYear();
-        return YearNow - age;
-    }
+    const BornYear = () => new Date().getFullYear() - age;
+
     return (
         <div>
             <p> hello {name}, you are {age} years old.
