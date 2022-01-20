@@ -4,6 +4,26 @@ import Header from "./Header";
 import Total from "./Total";
 import Hello from "./Hello";
 
+
+const History = ( props ) =>
+
+{
+    const { allClicks } = props;
+    if ( allClicks.length === 0 )
+    {
+        return (
+            <div>
+                the app is used by pressing the buttons
+            </div>
+        )
+    }
+    return (
+        <div>
+            button press History : {allClicks.join("")}
+        </div>
+    )
+}
+
 function App()
 {
     // const name = "peter";
@@ -82,9 +102,7 @@ function App()
             <button onClick={handleLeftClick}> left </button>
             <button onClick={handleRightClick}> right </button>
             {right}
-            <p>
-                {allClicks.join(" ")}
-               </p>
+<History allClicks={allClicks} />
         </div>
     );
 }
