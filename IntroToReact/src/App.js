@@ -40,21 +40,18 @@ function App() {
     
     const handleLeftClick = () =>
     {
-        const newClicks = {
+        setClicks( {
             ...clicks,
             left: clicks.left + 1,
-        };
-        setClicks( newClicks );
+        } );
     }
 
     const handleRightClick = () =>
     {
-        const newClick = 
-        {
-            ...clicks,
-            right: clicks.right + 1
-        }
-        setClicks( newClick );
+            setClicks( {
+                ...clicks,
+                right: clicks.right + 1
+            } );
     }
     
     return (
