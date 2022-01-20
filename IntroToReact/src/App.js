@@ -46,6 +46,16 @@ function App() {
         };
         setClicks( newClicks );
     }
+
+    const handleRightClick = () =>
+    {
+        const newClick = 
+        {
+            left: clicks.left,
+            right: clicks.right + 1
+        }
+        setClicks( newClick );
+    }
     
     return (
         <div>
@@ -57,12 +67,17 @@ function App() {
                /> */}
                {/* <Hello  age ={age}  name ={name}/> */}
 
-               {counter}
+               {/* {counter}
 
                <button onClick={handleClick}> plus </button>
                <button onClick={()=>
                    setCounter(0)
-               }> plus </button>
+               }> plus </button> */}
+            
+            {clicks.left}
+            <button onClick={handleLeftClick}> left </button>
+            <button onClick={handleRightClick}> right </button>
+            {clicks.right}
 
         </div>
     );
