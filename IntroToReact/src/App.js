@@ -41,8 +41,8 @@ function App() {
     const handleLeftClick = () =>
     {
         const newClicks = {
+            ...clicks,
             left: clicks.left + 1,
-            right: clicks.right
         };
         setClicks( newClicks );
     }
@@ -51,7 +51,7 @@ function App() {
     {
         const newClick = 
         {
-            left: clicks.left,
+            ...clicks,
             right: clicks.right + 1
         }
         setClicks( newClick );
