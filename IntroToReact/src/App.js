@@ -43,18 +43,22 @@ function App()
 
     const handleLeftClick = () =>
     {
-        setClicks( {
-            ...clicks,
-            left: clicks.left + 1,
-        } );
+        // setClicks( {
+        //     ...clicks,
+        //     left: clicks.left + 1,
+        // } );
+        setAll( allClicks.concat( "L" ) );
+        setLeft( left + 1 );
     }
 
     const handleRightClick = () =>
     {
-        setClicks( {
-            ...clicks,
-            right: clicks.right + 1
-        } );
+        // setClicks( {
+        //     ...clicks,
+        //     right: clicks.right + 1
+        // } );
+        setAll( allClicks.concat( "R" ) );
+        setRight( right + 1 );
     }
 
     return (
@@ -74,11 +78,13 @@ function App()
                    setCounter(0)
                }> plus </button> */}
 
-            {clicks.left}
+            {left}
             <button onClick={handleLeftClick}> left </button>
             <button onClick={handleRightClick}> right </button>
-            {clicks.right}
-
+            {right}
+            <p>
+                {allClicks.join(" ")}
+               </p>
         </div>
     );
 }
