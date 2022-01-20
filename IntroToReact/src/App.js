@@ -1,10 +1,11 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Contents from "./Contents";
 import Header from "./Header";
 import Total from "./Total";
 import Hello from "./Hello";
 
-function App() {
+function App()
+{
     // const name = "peter";
     // const age = 30;
     // const course = {
@@ -34,10 +35,12 @@ function App() {
     // {
     //     setCounter( counter + 1 )
     // }
-    const [clicks, setClicks] = useState( {
-        left: 0, right: 0
-    } );
-    
+ 
+
+    const [left, setLeft] = useState( 0 );
+    const [right, setRight] = useState( 0 );
+    const [ allClicks, setAll] = useState( [] );
+
     const handleLeftClick = () =>
     {
         setClicks( {
@@ -48,12 +51,12 @@ function App() {
 
     const handleRightClick = () =>
     {
-            setClicks( {
-                ...clicks,
-                right: clicks.right + 1
-            } );
+        setClicks( {
+            ...clicks,
+            right: clicks.right + 1
+        } );
     }
-    
+
     return (
         <div>
             {/* <Header course={course} />
@@ -62,15 +65,15 @@ function App() {
             <Total
                 parts={course.parts}
                /> */}
-               {/* <Hello  age ={age}  name ={name}/> */}
+            {/* <Hello  age ={age}  name ={name}/> */}
 
-               {/* {counter}
+            {/* {counter}
 
                <button onClick={handleClick}> plus </button>
                <button onClick={()=>
                    setCounter(0)
                }> plus </button> */}
-            
+
             {clicks.left}
             <button onClick={handleLeftClick}> left </button>
             <button onClick={handleRightClick}> right </button>
