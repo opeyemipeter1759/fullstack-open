@@ -1,31 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import Contents from "./Contents";
 import Header from "./Header";
 import Total from "./Total";
 import Hello from "./Hello";
 
-
-const History = ( props ) =>
-
-{
+const History = (props) => {
     const { allClicks } = props;
-    if ( allClicks.length === 0 )
-    {
-        return (
-            <div>
-                the app is used by pressing the buttons
-            </div>
-        )
+    if (allClicks.length === 0) {
+        return <div>the app is used by pressing the buttons</div>;
     }
-    return (
-        <div>
-            button press History : {allClicks.join("")}
-        </div>
-    )
-}
+    return <div>button press History : {allClicks.join("")}</div>;
+};
 
-function App()
-{
+function App() {
     // const name = "peter";
     // const age = 30;
     // const course = {
@@ -55,31 +42,30 @@ function App()
     // {
     //     setCounter( counter + 1 )
     // }
- 
 
-    const [left, setLeft] = useState( 0 );
-    const [right, setRight] = useState( 0 );
-    const [ allClicks, setAll] = useState( [] );
+    const [left, setLeft] = useState(0);
+    const [right, setRight] = useState(0);
+    const [allClicks, setAll] = useState( [] );
+    const [value , setValue] = useState(10);
 
-    const handleLeftClick = () =>
-    {
+    const setToValue = ( newValue ) => () => { setValue(newValue)}
+    const handleLeftClick = () => {
         // setClicks( {
         //     ...clicks,
         //     left: clicks.left + 1,
         // } );
-        setAll( allClicks.concat( "L" ) );
-        setLeft( left + 1 );
-    }
+        setAll(allClicks.concat("L"));
+        setLeft(left + 1);
+    };
 
-    const handleRightClick = () =>
-    {
+    const handleRightClick = () => {
         // setClicks( {
         //     ...clicks,
         //     right: clicks.right + 1
         // } );
-        setAll( allClicks.concat( "R" ) );
-        setRight( right + 1 );
-    }
+        setAll(allClicks.concat("R"));
+        setRight(right + 1);
+    };
 
     return (
         <div>
@@ -98,11 +84,18 @@ function App()
                    setCounter(0)
                }> plus </button> */}
 
-            {left}
+            {/* {left}
             <button onClick={handleLeftClick}> left </button>
             <button onClick={handleRightClick}> right </button>
             {right}
-<History allClicks={allClicks} />
+            <History allClicks={allClicks} /> */}
+
+            {value}
+            <button onClick={setToValue( 1000 )}> thousand </button>
+            <button onClick={setToValue( 100 )}> hundred </button>
+            <button onClick={setToValue( 0 )}> reset </button>
+            <button onClick={setToValue( value+1 )}> increment </button>
+            <button onClick={setToValue( value-1 )}> decrement </button>
         </div>
     );
 }
