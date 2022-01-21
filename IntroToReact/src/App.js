@@ -15,7 +15,10 @@ const History = (props) => {
 const Button = (props) => {
     const { handleClick, text } = props;
     return <button onClick={handleClick}>{text}</button>;
-};
+}; 
+
+const Display = ( props ) => <div> {props.value} </div>
+
 function App() {
     // const name = "peter";
     // const age = 30;
@@ -97,8 +100,7 @@ function App() {
             {right}
             <History allClicks={allClicks} /> */}
 
-            {value}
-
+            <Display value={value}/>  
             <Button handleClick={() => setToValue( 2000 )} text='using subcomp'/>
             <button onClick={()=> setToValue(1000)}> thousand </button>
             <button onClick={()=> setToValue(100)}> hundred </button>
