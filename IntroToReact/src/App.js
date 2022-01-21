@@ -12,6 +12,10 @@ const History = (props) => {
     return <div>button press History : {allClicks.join("")}</div>;
 };
 
+const Button = (props) => {
+    const { handleClick, text } = props;
+    return <button onClick={handleClick}>{text}</button>;
+};
 function App() {
     // const name = "peter";
     // const age = 30;
@@ -45,10 +49,13 @@ function App() {
 
     const [left, setLeft] = useState(0);
     const [right, setRight] = useState(0);
-    const [allClicks, setAll] = useState( [] );
-    const [value , setValue] = useState(10);
+    const [allClicks, setAll] = useState([]);
+    const [value, setValue] = useState(10);
 
-    const setToValue = ( newValue ) => () => { setValue(newValue)}
+    const setToValue = (newValue) => {
+        setValue(newValue);
+    };
+
     const handleLeftClick = () => {
         // setClicks( {
         //     ...clicks,
@@ -91,11 +98,13 @@ function App() {
             <History allClicks={allClicks} /> */}
 
             {value}
-            <button onClick={setToValue( 1000 )}> thousand </button>
-            <button onClick={setToValue( 100 )}> hundred </button>
-            <button onClick={setToValue( 0 )}> reset </button>
-            <button onClick={setToValue( value+1 )}> increment </button>
-            <button onClick={setToValue( value-1 )}> decrement </button>
+
+            <Button handleClick={() => setToValue( 2000 )} text='using subcomp'/>
+            <button onClick={()=> setToValue(1000)}> thousand </button>
+            <button onClick={()=> setToValue(100)}> hundred </button>
+            <button onClick={()=> setToValue(0)}> reset </button>
+            <button onClick={()=> setToValue(value + 1)}> increment </button>
+            <button onClick={()=> setToValue(value - 1)}> decrement </button>
         </div>
     );
 }
