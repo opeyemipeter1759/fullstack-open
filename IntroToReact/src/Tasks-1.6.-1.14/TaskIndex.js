@@ -2,11 +2,21 @@ import React, { useState } from "react";
 
 const Statistics = (props) => {
     const { count, text } = props;
-    return (
-        <>
-            <p>{ text} {count} </p>
-        </>
-    );
+    if ( count === 0 )
+    {
+        return (
+            <p>
+                No feedback given
+            </p>
+        )
+    }
+    else
+    {
+        return (
+            <p>{text} {count} </p>
+
+        )
+    }
 };
 const Button = (props) => {
     const { text, onClick } = props;
