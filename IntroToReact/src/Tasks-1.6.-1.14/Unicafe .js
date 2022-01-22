@@ -6,9 +6,10 @@ const Button = ({ text, handleClick }) => {
 const StatisticLine = (props) => {
     const { count, text } = props;
     return (
-        <p>
-            {text} {count}
-        </p>
+        <tr>
+            <td> {text}</td>
+            <td> {count} </td>
+        </tr>
     );
 };
 
@@ -26,7 +27,9 @@ const Statistics = ( props ) =>
     else
     {
         statistcs = (
-            <>
+            <table>
+                <tbody>
+
                 <StatisticLine text="good" count={feedback.good} />
                 <StatisticLine text="bad" count={feedback.bad} />
                 <StatisticLine text="neutral" count={feedback.neutral} />
@@ -34,7 +37,8 @@ const Statistics = ( props ) =>
                 <StatisticLine text="average" count={feedback.average} />
 
                 <StatisticLine text="all" count={feedback.all} />
-            </>
+                </tbody>
+            </table>
         );
     }
     return (
