@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Button = ({ text, handleClick }) => {
     return <button onClick={handleClick}>{text}</button>;
 };
-const Statistic = (props) => {
+const StatisticLine = (props) => {
     const { count, text } = props;
     return (
         <p>
@@ -27,13 +27,13 @@ const Statistics = ( props ) =>
     {
         statistcs = (
             <>
-                <Statistic text="good" count={feedback.good} />
-                <Statistic text="bad" count={feedback.bad} />
-                <Statistic text="neutral" count={feedback.neutral} />
-                <Statistic text="positive" count={feedback.positive + "%"} />
-                <Statistic text="average" count={feedback.average} />
+                <StatisticLine text="good" count={feedback.good} />
+                <StatisticLine text="bad" count={feedback.bad} />
+                <StatisticLine text="neutral" count={feedback.neutral} />
+                <StatisticLine text="positive" count={feedback.positive + "%"} />
+                <StatisticLine text="average" count={feedback.average} />
 
-                <Statistic text="all" count={feedback.all} />
+                <StatisticLine text="all" count={feedback.all} />
             </>
         );
     }
