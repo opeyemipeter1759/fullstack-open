@@ -4,7 +4,6 @@ const Anecdote = () =>
 {
     const setNewAncedote = () => {
        setSelected( Math.floor(Math.random()*anecdotes.length ))
-        console.log(selected);
     } 
     const anecdotes = [
         "If it hurts, do it more often.",
